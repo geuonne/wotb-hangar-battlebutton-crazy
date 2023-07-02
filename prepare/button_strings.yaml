@@ -1,0 +1,87 @@
+battle:
+    ru:
+        ### regular
+        - "В БОЙ?"
+        - "В БОЛЬ?"
+        - "В БОЛЬ!"
+        - "ПОЕХАЛИ!"
+        - "Пойти на..."
+        - "Ну еще каточку"
+        - "Туда и назад"
+        - "Играть онлайн"
+        - "ФАРМ ЗОВЁТ"
+        - "Кря~"
+        - "ЫАЫАЫ"
+        - "Слить за 30 сек"
+        - "Впирьот йопрст!"
+        - "ЗАРОДЕНУ"
+        - "ГОУГОУГОУ!"
+        - "Ангар в бою"
+        - "Бой в ангаре"
+        - "Шанс попасть в СЛРН!"
+        - "утопиться"
+        - "УТОПИТЬСЯ!"
+        - "Не слушай токсиков"
+        - "А может в улитки?"
+        - "А может в ТО?"
+        - "А может в Армату?"
+        - "А может в ТК?"
+        - "ИГРАТЬ ПРОТИВ БОТОВ"
+        - "Не позорься, а"
+        ### trolls
+        - "РЕМОНТ"
+        - "ТРЕНИРОВАТЬСЯ"
+        - "ВЫЙТИ ИЗ ИГРЫ"
+        - "Нажми для получения 500 голды"
+        - "ГОТОВ!"
+        - "НЕ ГОТОВ!"
+        ### transformations
+        - "!ЙОБ В" # reverse
+        - "B BOY!" # runglish
+        - "3021611!" # caesar notation
+        - ".-- / -... --- .--- -.-.--" # morse
+        - "'\\\\\\\\_( :) )_/'" # shrug
+    # Can appear regardless of current localization
+    any:
+        ### translations of battle button text, apply to any localization
+        - "BATTLE!" # en
+        - "В БОЙ!" # ru
+        - "ДО БОЮ!" # uk
+        - "GEFECHT!" # de
+        - "COMBATTRE!" # fr
+        - "BATTAGLIA!" # it
+        - "¡BATALLA!" # es
+        - "BITWA!" # pl
+        - "THAM CHIẾN!" # vi
+        - " " # empty
+        # inpdependent
+        - "hangar/battleButton"
+        - "hangar/RepairButton"
+        - "DO FISTING"
+training:
+    ru:
+        ### regular
+        - "В БОЙ!"
+        - "Совокупляться"
+        - "Рпшь, никто те не судья :з"
+        ### Transformations
+        - "ТРЕНИРОВАТЬСЯ" # reverse
+        - "- .-. . -. .. .-. --- .-- .- - -..- ... .-.-" # morse
+    # Can appear regardless of current localization
+    any:
+        ### in other languages:
+        - "TRAIN" # en
+        - "ТРЕНИРОВАТЬСЯ" # ru
+        - "ТРЕНУВАТИСЯ" # uk
+        - "GEFECHT!" # de
+        - "S'ENTRAÎNER" # fr
+        - "ADDESTRA" # it
+        - "ENTRENAR" # es
+        - "SZKÓL" # pl
+        - "ĐÀO TẠO" # vi
+        - " " # empty
+        # independent
+        - "hangar/battleButton"
+        - "hangar/RepairButton"
+        - "hangar/TrainingRoomButton"
+        - "TO THE GYM"
