@@ -33,7 +33,7 @@ battle:
         - "КУПИ  "
         - "В PLAYBOY!"
         - "НЫАА"
-        - "print('В БОЙ!')"
+        - "print(\u2019В БОЙ!\u2019)"
         - "е бой"
         - "всё решено мама я..."
         - "Нагнуть"
@@ -57,7 +57,7 @@ battle:
         - "B BOY!" # runglish
         - "3021611!" # caesar notation
         - ".-- / -... --- .--- -.-.--" # morse
-        - "'\\_( :) )_/'" # shrug
+        - "\u2019\u005C_( :) )_/\u2019" # shrug '\_( :) )_/'
     # Can appear regardless of current localization
     any:
         ### translations of battle button text, apply to any localization
@@ -92,7 +92,7 @@ training:
         - "ТРЕНИРОВАТЬСЯ" # ru
         - "ТРЕНУВАТИСЯ" # uk
         - "GEFECHT!" # de
-        - "S'ENTRAÎNER" # fr
+        - "S\u2019ENTRAÎNER" # fr
         - "ADDESTRA" # it
         - "ENTRENAR" # es
         - "SZKÓL" # pl
