@@ -5,6 +5,7 @@ battle:
         - "В БОЛЬ?"
         - "В БОЛЬ!"
         - "ПОЕХАЛИ!"
+        - "ДАТЬ ЖАРУ!"
         - "Пойти на..."
         - "Ну еще каточку"
         - "Туда и назад"
@@ -28,6 +29,22 @@ battle:
         - "А может в ТК?"
         - "ИГРАТЬ ПРОТИВ БОТОВ"
         - "Не позорься, а"
+        - "КУПИТЬ"
+        - "КУПИ  "
+        - "В PLAYBOY!"
+        - "НЫАА"
+        - "print('В БОЙ!')"
+        - "е бой"
+        - "всё решено мама я..."
+        - "Нагнуть"
+        - "Нагнуться"
+        - "Пожалеть о своих жизненных выборах"
+        - "+/- 25% на попадание в бой"
+        - "Познакомиться с раками"
+        - "Попасть в ЛРН"
+        - "Вашему танку доступен новый ранг!"
+        - "Попасть в нарезку вертушек"
+        - "https://tankionline.com/ru/"
         ### trolls
         - "РЕМОНТ"
         - "ТРЕНИРОВАТЬСЯ"
@@ -40,7 +57,7 @@ battle:
         - "B BOY!" # runglish
         - "3021611!" # caesar notation
         - ".-- / -... --- .--- -.-.--" # morse
-        - "'\\\\\\\\_( :) )_/'" # shrug
+        - "'\\_( :) )_/'" # shrug
     # Can appear regardless of current localization
     any:
         ### translations of battle button text, apply to any localization
@@ -54,10 +71,11 @@ battle:
         - "BITWA!" # pl
         - "THAM CHIẾN!" # vi
         - " " # empty
-        # inpdependent
+        # independent
         - "hangar/battleButton"
         - "hangar/RepairButton"
         - "DO FISTING"
+        - "+8 499 791 2050"
 training:
     ru:
         ### regular
