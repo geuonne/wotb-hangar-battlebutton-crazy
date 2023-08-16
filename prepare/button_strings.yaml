@@ -1,11 +1,22 @@
+# NOTE: use
+# - \u2019 for double quotes
+# - \u005C for backslash
+
 battle:
     ru:
         ### regular
+        - "ПОЕХАЛИ!"
+        - "ДАТЬ ЖАРУ!"
+        - "ЭЙ, УХНЕМ!"
+        - "ДА ГРЯНЕТ БИТВА!"
+        - "СНОВА В БОЙ!"
+        - "ПО МАШИНАМ!"
+        - "К НОВЫМ ПОБЕДАМ!"
+        - "ГОТОВНОСТЬ №1"
+        ### funny
         - "В БОЙ?"
         - "В БОЛЬ?"
         - "В БОЛЬ!"
-        - "ПОЕХАЛИ!"
-        - "ДАТЬ ЖАРУ!"
         - "Пойти на..."
         - "Ну еще каточку"
         - "Туда и назад"
@@ -31,6 +42,7 @@ battle:
         - "Не позорься, а"
         - "КУПИТЬ"
         - "КУПИ  "
+        - "СМЫСЛА НЕТ"
         - "В PLAYBOY!"
         - "НЫАА"
         - "print(\u2019В БОЙ!\u2019)"
@@ -42,25 +54,33 @@ battle:
         - "+/- 25% на попадание в бой"
         - "Познакомиться с раками"
         - "Попасть в ЛРН"
-        - "Вашему танку доступен новый ранг!"
         - "Попасть в нарезку вертушек"
         - "https://tankionline.com/ru/"
+        - "Ужас какой"
+        - "Загрузка..."
+        - "Может другой режим?"
+        - "ЭТО РУБЕКОН"
         ### trolls
         - "РЕМОНТ"
         - "ТРЕНИРОВАТЬСЯ"
         - "ВЫЙТИ ИЗ ИГРЫ"
         - "Нажми для получения 500 голды"
+        - "Вашему танку доступен новый ранг!"
         - "ГОТОВ!"
         - "НЕ ГОТОВ!"
+        - "НАСТРОЙКИ"
+        - "ПРИГЛАСИТЬ ВО ВЗВОД"
         ### transformations
         - "!ЙОБ В" # reverse
         - "B BOY!" # runglish
         - "3021611!" # caesar notation
         - ".-- / -... --- .--- -.-.--" # morse
         - "\u2019\u005C_( :) )_/\u2019" # shrug '\_( :) )_/'
+        - "б ани!" # CP1251 - KOI-8R
+        - "БАТТЛЕ!" # KOI-7
     # Can appear regardless of current localization
     any:
-        ### translations of battle button text, apply to any localization
+        ### translations of battle button text
         - "BATTLE!" # en
         - "В БОЙ!" # ru
         - "ДО БОЮ!" # uk
@@ -76,6 +96,21 @@ battle:
         - "hangar/RepairButton"
         - "DO FISTING"
         - "+8 499 791 2050"
+        - "Also try WoT!"
+        - "Also try WoTB! Oh wait..."
+        - "Also try WoWs!"
+        - "Also try WoWsB!"
+        - "Also try WoWp!"
+        - "Also try WoWpB!"
+        - "Also try WoT Console!"
+        - "Also try WoT Generals!"
+        - "Also try War Thunder!"
+        - "Also try AW!"
+        - "Also try Armata!"
+        - "Also try Tanki Online!"
+        - "Also try Tanki X!"
+        - "Also try Tank Company!"
+        - "Also try Tankzors Pro!"
 training:
     ru:
         ### regular
@@ -83,7 +118,7 @@ training:
         - "Совокупляться"
         - "Рпшь, никто те не судья :з"
         ### Transformations
-        - "ТРЕНИРОВАТЬСЯ" # reverse
+        - "ЯСЬТАВОРИНЕРТ" # reverse
         - "- .-. . -. .. .-. --- .-- .- - -..- ... .-.-" # morse
     # Can appear regardless of current localization
     any:
