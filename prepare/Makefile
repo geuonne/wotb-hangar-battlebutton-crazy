@@ -1,4 +1,4 @@
-include /home/geuonne/.local/src/wotb-mods/wotb-hangar-battlebutton-crazy/definitions.mk
+include ../definitions.mk
 
 target_language = ru
 button_types = battle training
@@ -34,8 +34,8 @@ $(eval _data = ("DRAW_SCALE_TO_RECT" | .. style = "double"))
 $(YQ) --inplace '$(_component_element) = ($(_data))' mod_$@ $(_STASEP)
 
 $(eval _component_element = (($(_component).children.[] | select(."name" == "battle_top")).position[0]))
-$(eval _data = $(_battle_button_width) / 2)
-$(YQ) --inplace '$(_component_element) = ($(_data) | . tag = "!!int")' mod_$@ $(_STASEP)
+$(eval _data = $(_battle_button_width) / 2$(_YQ_forcefloat))
+$(YQ) --inplace '$(_component_element) = ($(_data))' mod_$@ $(_STASEP)
 endef
 
 BattleButton.yaml: button_strings.yaml
