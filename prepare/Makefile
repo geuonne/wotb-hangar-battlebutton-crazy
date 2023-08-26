@@ -19,7 +19,23 @@ endef
 define training_button_setup =
 $(eval _component = ((((((.Prototypes.[] | select(."name" == "BattleButton")).children.[] | select(."name" == "ButtonWrapper")).children.[] | select(."name" == "BattleButtonWrapper")).children.[] | select(."name" == "TrainingButton")).children.[] | select(."name" == "Content")).children.[] | select(."name" == "Text")))
 $(eval _data = ({"bindings": [["UITextComponent.text", "$(i_element)buttonText"]]} | .. style = "double" | .[].[] style = "flow"))
-$(YQ) --inplace '$(_component) += $(_data)' mod_$@
+$(YQ) --inplace '$(_component) += $(_data)' mod_$@ $(_STASEP)
+endef
+
+define battle_button_setup =
+$(eval _battle_button_width = 264.0)
+$(eval _component = ((((.Prototypes.[] | select(."name" == "BattleButton")).children.[] | select(."name" == "ButtonWrapper")).children.[] | select(."name" == "BattleButtonWrapper")).children.[] | select(."name" == "BattleWrapper")))
+$(eval _component_element = $(_component).components.SizePolicy.horizontalValue)
+$(eval _data = $(_battle_button_width))
+$(YQ) --inplace '$(_component_element) = $(_data)' mod_$@ $(_STASEP)
+
+$(eval _component_element = (($(_component).children.[] | select(."name" == "Content")).children.[] | select(."name" == "ActiveBg")).components.Background.drawType)
+$(eval _data = ("DRAW_SCALE_TO_RECT" | .. style = "double"))
+$(YQ) --inplace '$(_component_element) = ($(_data))' mod_$@ $(_STASEP)
+
+$(eval _component_element = (($(_component).children.[] | select(."name" == "battle_top")).position[0]))
+$(eval _data = $(_battle_button_width) / 2)
+$(YQ) --inplace '$(_component_element) = ($(_data) | . tag = "!!int")' mod_$@ $(_STASEP)
 endef
 
 BattleButton.yaml: button_strings.yaml
