@@ -1,11 +1,10 @@
-# WoT Blitz - `insert your mod name here`
+# WoT Blitz - Hangar BattleButton Crazy
 
-`insert any media here`
+[public/media/battle.png]
+[public/media/training.png]
 
 ## Description
-`Here go mod descriptions - the content that you can provide in various mod sites as well. Specify the links to your mod descriptions from public/desc directory here`
-* [en](public/desc/en.txt)
-* [ru](public/desc/ru.txt)
+See [mod_info.yaml](mod_info.yaml).
 
 ## Install
 ### Manual install
