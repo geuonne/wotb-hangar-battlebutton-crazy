@@ -1,0 +1,34 @@
+mod_entry:
+    # Mod name
+    name: "Hangar BattleButton Crazy"
+    # One or many of: modpack, gfx, gfx/bulb, gfx/aim, sfx/crew, sfx/guns, sfx/music, sfx/gui, gui, gui/layout, optimization, 3d/hangar, 3d/vehicle, 3d/camo, localization, misc
+    tags:
+    - "localization"
+    - "misc"
+    # One or many authors
+    authors:
+    - "geuonne"
+    - "alexxxxx02"
+    compatibility:
+        target_publisher: "any"
+        target_platform: "any"
+        target_patch: 1020
+        patch_tested: 1020
+    # Mod description
+    description:
+        ru: |
+            Мод добавляет случайные надписи для кнопки боя. От классических фраз "ПОЕХАЛИ!" - до разных интерпретаций строки "В БОЙ!". Также рандомизированы надписи кнопки "Тренироваться".
+            В планах также добавить также и рандомные эффекты для кнопок (смещение, поворот, растяжение, исчезновение и т.д.).
+        en: |
+            This mod adds random quotes for a battle button. From classic like "LETS GO!", to various interpretations of the string "BATTLE!". The "TRAIN" button has randomized quotes as well.
+    # Mod FAQ. Mostly is provided along with description
+    faq:
+        ru:
+        - Q: |
+              Могу ли я предложить свои надписи?
+          A: |
+              Абсолютно!
+        - Q: |
+              Can I suggest my own quotes?
+          A: |
+              Absolutely!
