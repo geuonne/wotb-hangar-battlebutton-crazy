@@ -1,6 +1,9 @@
 # NOTE: use
-# - \u2019 for double quotes
-# - \u005C for backslash
+# - \u201D for (")
+# - \u2019 for (')
+# - \u005C for (\)
+# - \u0023 for (#)
+# - \u0024 for ($)
 
 battle:
     ru:
