@@ -1,0 +1,11 @@
+uk:
+    common:
+        original: ["n/a"]
+    battle:
+        original: ["ДО БОЮ!"]
+    training:
+        original: ["ТРЕНУВАТИСЯ"]
+    platoonReady:
+        original: ["ГОТОВИЙ!"]
+    platoonCancel:
+        original: ["НЕ ГОТОВИЙ!"]

@@ -1,0 +1,31 @@
+en:
+    common:
+        original: ["n/a"]
+        repair: ["REPAIR"]
+        exit: ["EXIT"]
+        wait: ["STOP!"]
+        quack: ["Quack~"]
+        other:
+        - "GO TOUCH SOME GRASS"
+    battle:
+        original: ["BATTLE!"]
+        tr_tonumber: ["2\b1\b20\b20\b12\b5"]
+        tr_morse: ["-... .- - - .-.. ."]
+        tr_reverse: ["!ELTTAB"]
+        tr_rot13: ["ONGGYR!"]
+        tr_atbash: ["YZGGOV!"]
+        other:
+        - "BATTLE?"
+    training:
+        original: ["TRAIN"]
+        tr_tonumber: ["20\b18\b1\b9\b14"]
+        tr_morse: ["- .-. .- .. -."]
+        tr_reverse: ["NIART"]
+        tr_rot13: ["GENVA"]
+        tr_atbash: ["GIZRM"]
+        other:
+        - "DO RP"
+    platoonReady:
+        original: ["READY!"]
+    platoonCancel:
+        original: ["CANCEL"]

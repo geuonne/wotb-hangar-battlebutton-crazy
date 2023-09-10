@@ -1,0 +1,11 @@
+it:
+    common:
+        original: ["n/a"]
+    battle:
+        original: ["BATTAGLIA!"]
+    training:
+        original: ["ADDESTRA"]
+    platoonReady:
+        original: [""]
+    platoonCancel:
+        original: [""]

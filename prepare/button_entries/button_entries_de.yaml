@@ -1,0 +1,11 @@
+de:
+    common:
+        original: ["n/a"]
+    battle:
+        original: ["GEFECHT!"]
+    training:
+        original: ["ÜBUNG"]
+    platoonReady:
+        original: [""]
+    platoonCancel:
+        original: [""]

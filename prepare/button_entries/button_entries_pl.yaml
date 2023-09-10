@@ -1,0 +1,11 @@
+pl:
+    common:
+        original: ["n/a"]
+    battle:
+        original: ["BITWA!"]
+    training:
+        original: ["SZKÓL"]
+    platoonReady:
+        original: [""]
+    platoonCancel:
+        original: [""]

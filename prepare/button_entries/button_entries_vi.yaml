@@ -1,0 +1,11 @@
+vi:
+    common:
+        original: ["n/a"]
+    battle:
+        original: ["THAM CHIẾN!"]
+    training:
+        original: ["ĐÀO TẠO"]
+    platoonReady:
+        original: [""]
+    platoonCancel:
+        original: [""]

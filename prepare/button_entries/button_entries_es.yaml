@@ -1,0 +1,11 @@
+es:
+    common:
+        original: ["n/a"]
+    battle:
+        original: ["¡BATALLA!"]
+    training:
+        original: ["ENTRENAR"]
+    platoonReady:
+        original: [""]
+    platoonCancel:
+        original: [""]

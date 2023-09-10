@@ -1,0 +1,11 @@
+fr:
+    common:
+        original: ["n/a"]
+    battle:
+        original: ["COMBATTRE!"]
+    training:
+        original: ["S’ENTRAÎNER"]
+    platoonReady:
+        original: [""]
+    platoonCancel:
+        original: [""]
