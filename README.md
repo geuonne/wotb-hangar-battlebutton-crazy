@@ -1,7 +1,8 @@
 # WoT Blitz - Hangar BattleButton Crazy
 
-[public/media/battle.png]
-[public/media/training.png]
+![](public/media/battle.png)
+![](public/media/training.png)
+![](public/media/battle_crazy_angle-scale.png)
 
 ## Description
 See [mod_info.yaml](mod_info.yaml).

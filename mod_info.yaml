@@ -17,10 +17,11 @@ mod_entry:
     # Mod description
     description:
         ru: |
-            Мод добавляет случайные надписи для кнопки боя. От классических фраз "ПОЕХАЛИ!" - до разных интерпретаций строки "В БОЙ!". Также рандомизированы надписи кнопки "Тренироваться".
-            В планах также добавить также и рандомные эффекты для кнопок (смещение, поворот, растяжение, исчезновение и т.д.).
+            С глубочайших глубин секретных корпораций ВГБ было найдено чудо рандомное, которое назвали "сумасшедшей кнопкой боя". Это необычная кнопка боя, в основном она выкрикивает случайные фразы: от классических фраз "ПОЕХАЛИ!" - до "hangar/ExitButton". Свидетели поговаривают, что кнопка также является полиглотом, знатоком кодировок, имеет резкие чувства и даже небольшое умение предсказывать будущее...
+            В редких случаях замечено, что кнопка может уходить даже со своего места и проявлять невероятную эластичность.
         en: |
-            This mod adds random quotes for a battle button. From classic like "LETS GO!", to various interpretations of the string "BATTLE!". The "TRAIN" button has randomized quotes as well.
+            A random misery from the deepest depths of secret corporations of WGB was found, which was called - simply - "crazy battle button". In general it shouts random phrases: from classical ones like "LETS GO!" to some obscure ones like "". Rumors say that the button is a polyglot, has excellent knowledge in coding systems, is sentient and even has a little skill to predict future...
+            Additionaly, rare cases are documented of the button going off from its place or becoming incredibly elastic.
     # Mod FAQ. Mostly is provided along with description
     faq:
         ru:
