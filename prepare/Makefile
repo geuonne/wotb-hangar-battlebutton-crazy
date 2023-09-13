@@ -54,7 +54,7 @@ endef
 define add_button_effects =
 # Add effect bindings
 $(eval _component = ((((.Prototypes.[] | select(."name" == "BattleButton")).children.[] | select(."name" == "ButtonWrapper")).children.[] | select(."name" == "BattleButtonWrapper")).children.[] | select(."name" == "$(i_component)")).bindings)
-$(YQ) --inplace eval-all '$(_component) += (.bindings) | select(filename == "mod_BattleButton.yaml") | ... comments = ""' mod_$@ effects.yaml $(_STASEP)
+$(YQ) --inplace eval-all '$(_component) += (.bindings) | select(filename == "mod_$@") | ... comments = ""' mod_$@ effects.yaml $(_STASEP)
 endef
 
 BattleButton.yaml: button_entries/button_entries_*.yaml
@@ -64,6 +64,6 @@ BattleButton.yaml: button_entries/button_entries_*.yaml
 	$(YQ) --inplace eval-all '(.Prototypes.[] | select(."name" == "BattleButton")).components.UIDataLocalVarsComponent.data += ([.any.dynamic_vars, .$(target_language).dynamic_vars] | flatten(1)) | select(filename == "mod_$@")' mod_$@ $^
 	$(foreach i_element,$(button_types),$(add_control_string_pool))
 # Add effect variables
-	$(YQ) --inplace eval-all '(.Prototypes.[] | select(."name" == "BattleButton")).components.UIDataLocalVarsComponent.data += (.dynamic_vars) | select(filename == "mod_$@.yaml") | ... comments = ""' mod_$@ effects.yaml
+	$(YQ) --inplace eval-all '(.Prototypes.[] | select(."name" == "BattleButton")).components.UIDataLocalVarsComponent.data += (.dynamic_vars) | select(filename == "mod_$@") | ... comments = ""' mod_$@ effects.yaml
 	$(foreach i_component,$(button_components),$(add_button_effects))
 	$(CP) mod_$@ $(PROJECTROOT)/$(SRCDIR)/UI/Screens3/Lobby/Hangar/$@
