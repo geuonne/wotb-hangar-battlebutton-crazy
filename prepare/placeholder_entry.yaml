@@ -1,0 +1,77 @@
+entry:
+-   class: "UIControl"
+    name: "CrazyPlaceholder"
+    visible: false
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        UIAttachLayoutMasterComponent:
+            attachId: "BATTLE_BUTTON"
+        UIInputEventComponent: {}
+        IgnoreLayout: {}
+        StyleSheet:
+            styles: "~res:/UI/Screens3/ButtonSound.style.yaml"
+    bindings:
+    # TODO: how?
+    # - ["UIInputEventComponent.onTouchUpInside", "crazy_placeholderCurrentEvent"]
+    - ["visible", "crazy_bButtonIsDisplaced"]
+    children:
+    -   class: "UIControl"
+        name: "Content"
+        pivot: [0.500000, 0.500000]
+        input: false
+        classes: "content-area"
+        components:
+            UIOpacityComponent: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            StyleSheet:
+                styles: "~res:/UI/Screens3/Lobby/Hangar/BattleButton.style.yaml"
+        children:
+        # -   class: "UIControl"
+        #     name: "Hover"
+        #     size: [32.000000, 32.000000]
+        #     input: false
+        #     classes: "hover grey-shark-10-bg"
+        #     components:
+        #         Background:
+        #             drawType: "DRAW_STRETCH_BOTH"
+        #             sprite: "~res:/Gfx/Lobby/backgrounds/bg_r1"
+        #             leftRightStretchCap: 1.000000
+        #             topBottomStretchCap: 1.000000
+        #         UIOpacityComponent: {}
+        #         SizePolicy:
+        #             horizontalPolicy: "PercentOfParent"
+        #             verticalPolicy: "PercentOfParent"
+        #         StyleSheet:
+        #             styles: "~res:/UI/Screens3/Color.style.yaml;~res:/UI/Screens3/Lobby/Hangar/BattleButton.style.yaml"
+        -   class: "UIControl"
+            name: "Text"
+            input: false
+            classes: "t-content-h4 bold white-wild-sand-text"
+            components:
+                UITextComponent:
+                    fitting: "FITTING_REDUCE"
+                BorderComponent:
+                    border-thickness: 2U
+                    border-color: [1.000000, 1.000000, 1.000000, 1.000000]
+                UIShadowComponent:
+                    blurType: "Gauss"
+                    color: [0.000000, 0.000000, 0.000000, 0.700000]
+                    indent: 12
+                    textureScale: 1
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 12.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 12.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                StyleSheet:
+                    styles: "~res:/UI/Screens3/Font.style.yaml;~res:/UI/Screens3/Lobby/Hangar/BattleButton.style.yaml"
+            bindings:
+            - ["UITextComponent.text", "placeholderbuttonText"]

@@ -1,8 +1,9 @@
 dynamic_vars:
-- ["int", "crazy_seed", "rand(101)"]
-- ["bool", "crazy_buttonEffect_bPivot", "(crazy_seed >= 0 and crazy_seed <= 3) or (crazy_seed >= 8 and crazy_seed <= 9)"]
-- ["bool", "crazy_buttonEffect_bScale", "(crazy_seed >= 0 and crazy_seed <= 1) or (crazy_seed >= 6 and crazy_seed <= 11)"]
-- ["bool", "crazy_buttonEffect_bAngle", "(crazy_seed >= 2 and crazy_seed <= 9)"]
+- ["bool", "crazy_buttonEffect_bPivot", "((rand(10000) / 100) <= 1.5)"]
+- ["bool", "crazy_buttonEffect_bScale", "(crazy_buttonEffect_bPivot and (rand(10000) <= 5000))"]
+- ["bool", "crazy_buttonEffect_bAngle", "((rand(10000) / 100) <= 20)"]
+# Whether to show placeholder button and hide other controls in the way of it
+- ["bool", "crazy_bButtonIsDisplaced", "crazy_buttonEffect_bScale or crazy_buttonEffect_bAngle"]
 bindings:
 - ["pivot", "when (crazy_buttonEffect_bPivot) -> vec2(0.5 + (rand(100) / 70 - 0.8), 0.3 + (rand(100) / 100 - 0.5)), vec2(0.0, 0.0)"]
 - ["scale", "when (crazy_buttonEffect_bScale) -> vec2(0.3 + (rand(50) / 10), 0.3 + (rand(30) / 10)), vec2(1.0, 1.0)"]
