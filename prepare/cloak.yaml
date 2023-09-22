@@ -1,0 +1,8 @@
+# Necessary to cloak all the controls which are in the way of
+# placeholder button
+bindings:
+- ["visible", "not crazy_bButtonIsDisplaced"]
+- ["input", "not crazy_bButtonIsDisplaced"]
+bindings_battleType:
+- ["visible", "isBattleTypeButtonVisible and not (isPrebattleTraining and isGeneralPackLoaded) and not crazy_bButtonIsDisplaced"]
+- ["input", "not crazy_bButtonIsDisplaced"]
