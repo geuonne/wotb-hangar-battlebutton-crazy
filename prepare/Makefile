@@ -1,9 +1,8 @@
 include ../definitions.mk
 
-
 target_language = ru
 # Space-separated list of button types
-button_types = battle training
+button_types = battle training placeholder
 button_components = BattleWrapper TrainingButton
 button_width = 344.0
 
@@ -25,6 +24,12 @@ $(YQ) --inplace '$(_component_element) = ($(_data))' mod_$@ $(_STASEP)
 $(eval _component_element = (($(_component).children.[] | select(."name" == "battle_top")).position[0]))
 $(eval _data = $(button_width) / 2$(_YQ_forcefloat))
 $(YQ) --inplace '$(_component_element) = ($(_data))' mod_$@ $(_STASEP)
+
+$(eval _component = ((((.Prototypes.[] | select(."name" == "BattleButton")).children.[] | select(."name" == "ButtonWrapper")).children.[] | select(."name" == "BattleButtonWrapper")).children.[] | select(."name" == "BattleTypeWrapper")))
+$(YQ) eval-all --inplace '$(_component) += {"bindings": select(filename == "cloak.yaml").bindings_battleType} | select(filename == "mod_$@") | ... comments = ""' mod_$@ cloak.yaml $(_STASEP)
+
+$(eval _component = ((((.Prototypes.[] | select(."name" == "BattleButton")).children.[] | select(."name" == "ButtonWrapper")).children.[] | select(."name" == "BattleButtonWrapper")).children.[] | select(."name" == "Shadows")))
+$(YQ) eval-all --inplace '$(_component) += {"bindings": select(filename == "cloak.yaml").bindings} | select(filename == "mod_$@") | ... comments = ""' mod_$@ cloak.yaml $(_STASEP)
 endef
 
 define training_button_setup =
@@ -46,6 +51,9 @@ $(YQ) --inplace '$(_component) += ($(_string_pool_var))' mod_$@ $(_STASEP)
 # All entries
 $(eval _component = (.Prototypes.[] | select(."name" == "BattleButton")).components.UIDataLocalVarsComponent.data)
 $(eval all_entries = [.$(target_language).$(i_element).*, .*.$(i_element).original, (.$(target_language).* | to_entries | .[] | select(.key == "original").value), .any.$(i_element).*, .any.common.*, .$(target_language).common.*])
+# Placeholder button has its own set of entries
+$(eval all_entries = $(if $(subst placeholder,,$(i_element)),$(all_entries),[.$(target_language).$(i_element).*$(,) .any.$(i_element).*]))
+
 $(eval string_pool != $(YQ) eval-all '$(all_entries) | flatten | ... comments = "" | .. style = "double" | unique | . style = "flow"' $^ | $(SED) 's/", "/"; "/g; s/\("@@\|@@"\)//g; s/\\\"/"/g; s/"/\\\"/g; s/\(.*\)/"\1"/')
 $(eval _string_pool_formatted = [["vector<string>", "$(i_element)buttonStringPool", $(string_pool)]] | ... style = "flow" | .[].[] style = "double")
 $(YQ) --inplace '$(_component) += ($(_string_pool_formatted))' mod_$@ $(_STASEP)
@@ -55,6 +63,11 @@ define add_button_effects =
 # Add effect bindings
 $(eval _component = ((((.Prototypes.[] | select(."name" == "BattleButton")).children.[] | select(."name" == "ButtonWrapper")).children.[] | select(."name" == "BattleButtonWrapper")).children.[] | select(."name" == "$(i_component)")).bindings)
 $(YQ) --inplace eval-all '$(_component) += (.bindings) | select(filename == "mod_$@") | ... comments = ""' mod_$@ effects.yaml $(_STASEP)
+endef
+
+define placeholder_button_setup =
+$(eval _component = ((((.Prototypes.[] | select(."name" == "BattleButton")).children.[] | select(."name" == "ButtonWrapper")).children.[] | select(."name" == "BattleButtonWrapper"))).children)
+$(YQ) --inplace eval-all '$(_component) = .entry + $(_component) | select(filename == "mod_$@") | ... comments = ""' mod_$@ placeholder_entry.yaml $(_STASEP)
 endef
 
 BattleButton.yaml: button_entries/button_entries_*.yaml
