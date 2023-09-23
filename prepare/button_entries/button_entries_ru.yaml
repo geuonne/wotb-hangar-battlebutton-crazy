@@ -182,7 +182,30 @@ ru:
         original: ["ГОТОВ!"]
     platoonCancel:
         original: ["НЕ ГОТОВ!"]
+    placeholder:
+        original: ["n/a"]
+        other:
+        - "Фигушки!"
+        - "Ну я же не просто так это делаю"
+        - "Я в Париже"
+        - "Лимит боёв превышен"
+        - "ПРОДАМ ГАРАЖ"
+        - "Обеденный перерыв"
+        - "ПОТРАЧЕНО"
+        - "Оставайтесь на линии"
+        - "Что, не везёт?"
+        - "Как ты мог потерять кнопку???"
+        - "Нет, сначала в магазин, потом уже сюда!"
+        - "@@\"ОБНАРУЖЕН \" + crazy_placeholderButtonDetected + \"!\"@@"
+        - "@@\"Кнопку \" + crazy_placeholderButtonOutcome@@"
+        - "@@\"Здесь был \" + crazy_placeholderNameWasHere@@"
     dynamic_vars:
     - ["vector<string>", "crazy_battleOutcomeStringPool", "[\"поражение\"; \"победу\"; \"ничью\"]"]
     - ["string", "crazy_battleOutcome", "crazy_battleOutcomeStringPool[rand(Size(crazy_battleOutcomeStringPool))]"]
     - ["int64", "crazy_battleOutcomeChance", "rand(101)"]
+    - ["vector<string>", "crazy_placeholderNameWasHereStringPool", "[\"SeRB\"; \"Tortik\"; \"no_skill_just_luck\"; \"geuonne\"]"]
+    - ["string", "crazy_placeholderNameWasHere", "crazy_placeholderNameWasHereStringPool[rand(Size(crazy_placeholderNameWasHereStringPool))]"]
+    - ["vector<string>", "crazy_placeholderButtonOutcomeStringPool", "[\"скурили\"; \"пропили\"; \"превратили в ислам\"; \"мобилизировали\"; \"забрали в дурку\"; \"утопили\"; \"перенажали\"]"]
+    - ["string", "crazy_placeholderButtonOutcome", "crazy_placeholderButtonOutcomeStringPool[rand(Size(crazy_placeholderButtonOutcomeStringPool))]"]
+    - ["vector<string>", "crazy_placeholderButtonDetectedStringPool", "[\"РАК\"; \"СТАТИСТ\"; \"ОЛЕНЬ\"; \"ЧИТЕР\"; \"МОДДЕР\"; \"D_W_S\"]"]
+    - ["string", "crazy_placeholderButtonDetected", "crazy_placeholderButtonDetectedStringPool[rand(Size(crazy_placeholderButtonDetectedStringPool))]"]
