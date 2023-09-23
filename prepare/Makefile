@@ -1,4 +1,5 @@
 include ../definitions.mk
+, := ,
 
 target_language = ru
 # Space-separated list of button types
@@ -54,7 +55,7 @@ $(eval all_entries = [.$(target_language).$(i_element).*, .*.$(i_element).origin
 # Placeholder button has its own set of entries
 $(eval all_entries = $(if $(subst placeholder,,$(i_element)),$(all_entries),[.$(target_language).$(i_element).*$(,) .any.$(i_element).*]))
 
-$(eval string_pool != $(YQ) eval-all '$(all_entries) | flatten | ... comments = "" | .. style = "double" | unique | . style = "flow"' $^ | $(SED) 's/", "/"; "/g; s/\("@@\|@@"\)//g; s/\\\"/"/g; s/"/\\\"/g; s/\(.*\)/"\1"/')
+$(eval string_pool != $(YQ) eval-all '$(all_entries) | flatten | ... comments = "" | .. style = "double" | unique | . style = "flow"' $^ | $(SED) 's/\\b//g; s/", "/"; "/g; s/\("@@\|@@"\)//g; s/\\\"/"/g; s/"/\\\"/g; s/\(.*\)/"\1"/')
 $(eval _string_pool_formatted = [["vector<string>", "$(i_element)buttonStringPool", $(string_pool)]] | ... style = "flow" | .[].[] style = "double")
 $(YQ) --inplace '$(_component) += ($(_string_pool_formatted))' mod_$@ $(_STASEP)
 endef
