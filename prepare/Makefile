@@ -43,7 +43,7 @@ define add_control_string_pool =
 # Add variable where randomized quote is stored
 $(eval _component = (.Prototypes.[] | select(."name" == "BattleButton")).components.UIDataLocalBindingsComponent.data)
 # Label of battle button is named buttonText, not battleButtonText
-$(eval _i_element != $(ECHO) $(i_element) | $(SED) 's/battle//g')
+$(eval _i_element = $(subst battle,,$(i_element)))
 $(eval _string_pool_var = [["string", "$(_i_element)buttonText", "$(i_element)buttonStringPool[rand(Size($(i_element)buttonStringPool))]"]] | ... comments = "" | ... style = "flow" | .[].[] style = "double")
 $(YQ) --inplace '$(_component) += ($(_string_pool_var))' mod_$@ $(_STASEP)
 
