@@ -72,5 +72,6 @@
                     bottomAnchorEnabled: true
                 StyleSheet:
                     styles: "~res:/UI/Screens3/Font.style.yaml;~res:/UI/Screens3/Lobby/Hangar/BattleButton.style.yaml"
-            bindings:
-            - ["UITextComponent.text", "placeholderbuttonText"]
+            # WARN: It's added automatically
+            # bindings:
+            # - ["UITextComponent.text", "placeholderbuttonText"]
