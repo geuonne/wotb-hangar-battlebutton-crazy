@@ -30,16 +30,18 @@ Here are some transformations and how to programatically get them:
 | `tr_tonumber`              | Map `letter -> number in the alphabet`. E.g. for `en`: `y -> 25, SPC -> 0`. | Manually                                             |
 | `tr_rot13`                 | Apply [rot13][ROT13] letter substitution.                                   | `rot` from `fortune`                                 |
 | `tr_reverse`               | Reverse the string by characters.                                           | `rev` from `coreutils`                               |
-| `tr_atbash`                | Apply [ATBASH][ATBASH] letter substitution.                                 | `atbash` shipped with this repository                |
+| `tr_atbash`                | Apply [ATBASH][ATBASH] letter substitution.                                 | `atbash.sh` shipped with this repository             |
 | `tr_morse`                 | Convert string to Morse code.                                               | [Online translator][Morse_online]                    |
 | `tr_cyrillic_punto`        | English except it's typed while using some Cyrillic QWERTY keyboard layout. | BATTLE! -> [type in ru] ИФЕЕДУ!                      |
 | `tr_cyrillic_punto_invert` | Some Cyrillic except it's typed on English QWERTY keyboard layout.          | В БОЙ! -> [type in en] D <JQ!                        |
 | `tr_cyrillic_bnopnya`      | Text from CP1251 encoding displayed in KOI8-R encoding. [Link][Bnopnya]     | `echo <input> \| iconv -t cp1251 \| iconv -f koi8-r` |
+| `tr_cyrillic_koi7`         | Latin text displayed in cyrillic KOI7 encoding. [Link][KOI7]                | `koi7.sh` shipped with this repository               |
 
 [ROT13]: https://en.wikipedia.org/wiki/ROT13
 [ATBASH]: https://en.wikipedia.org/wiki/Atbash
 [Morse_online]: https://morsecode.world/international/translator.html
 [Bnopnya]: https://neolurk.org/wiki/%D0%91%D0%9D%D0%9E%D0%9F%D0%9D%D0%AF
+[KOI7]: https://neolurk.org/wiki/%D0%98%D0%BD%D0%B6%D0%B0%D0%BB%D0%B8%D0%B4_%D0%B4%D0%B5%D0%B6%D0%B8%D1%86%D0%B5
 
 #### `dynamic_vars` node
 Insert custom variables for dynamic entries here, written exactly like in WG yaml files. The entries are appended to the `UIDataLocalVarsComponent.data`.
