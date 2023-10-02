@@ -1,4 +1,3 @@
-entry:
 -   class: "UIControl"
     name: "CrazyPlaceholder"
     visible: false
