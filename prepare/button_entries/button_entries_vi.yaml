@@ -1,11 +1,15 @@
 vi:
     common:
         original: ["n/a"]
-    battle:
+    BattleWrapper:
         original: ["THAM CHIẾN!"]
-    training:
+    TrainingButton:
         original: ["ĐÀO TẠO"]
-    platoonReady:
-        original: [""]
-    platoonCancel:
-        original: [""]
+    ReadyButton:
+        original: ["SẴN SÀNG!"]
+    NotReadyButton:
+        original: ["HỦY"]
+    BackToSquadButton:
+        original: ["VÀO TRUNG ĐỘI"]
+    CrazyPlaceholder:
+        original: ["n/a"]

@@ -1,11 +1,15 @@
 es:
     common:
         original: ["n/a"]
-    battle:
+    BattleWrapper:
         original: ["¡BATALLA!"]
-    training:
+    TrainingButton:
         original: ["ENTRENAR"]
-    platoonReady:
-        original: [""]
-    platoonCancel:
-        original: [""]
+    ReadyButton:
+        original: ["¡LISTO!"]
+    NotReadyButton:
+        original: ["CANCELAR"]
+    BackToSquadButton:
+        original: ["AL PELOTÓN"]
+    CrazyPlaceholder:
+        original: ["n/a"]

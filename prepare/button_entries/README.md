@@ -14,7 +14,12 @@ Each document has top node called by the file language code
 - Entries which can be resent regardles of current button type
 #### `<button_type>` node
 `<button_type>` node contains entries specific to the button.
-`<button_type>` is one of: `battle`, `training`, `platoonReady`, `platoonCancel`.
+`<button_type>` is one of:
+- `BattleWrapper`
+- `TrainingButton`
+- `ReadyButton`
+- `NotReadyButton`
+- `BackToSquadButton`
 
 ##### Entry transformations
 Entry transformations are written in `.<lang_code>.<button_type>` node applied to the `.<lang_code>.<button_type>.original` entry.

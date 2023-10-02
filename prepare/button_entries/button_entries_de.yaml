@@ -1,11 +1,15 @@
 de:
     common:
         original: ["n/a"]
-    battle:
+    BattleWrapper:
         original: ["GEFECHT!"]
-    training:
+    TrainingButton:
         original: ["ÜBUNG"]
-    platoonReady:
-        original: [""]
-    platoonCancel:
-        original: [""]
+    ReadyButton:
+        original: ["BEREIT!"]
+    NotReadyButton:
+        original: ["ABBRECHEN"]
+    BackToSquadButton:
+        original: ["ZUM ZUG"]
+    CrazyPlaceholder:
+        original: ["n/a"]

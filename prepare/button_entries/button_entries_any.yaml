@@ -8,7 +8,7 @@ any:
         other:
         - "\u2019\u005C_( :) )_/\u2019"   # shrug '\_( :) )_/'
         - "@@str(rand(1000)) + crazy_mathOperator + str(rand(1000)) + \"=???\"@@"
-    battle:
+    BattleWrapper:
         original: ["hangar/battleButton"]
         other:
         - "DO FISTING"
@@ -34,26 +34,30 @@ any:
         - "https://worldofwarplanes.com"
         - "https://worldofwarships.com"
         - "https://wotblitz.com"
-        - "dl-wotblitz-gc.wargaming.net/dlc/world_of_warplanes_blitz.next"
+        - "dl-wotblitz-gc.wargaming.net/dlc/world_of_warplanes_blitz.next" # that's a rickroll :)
         - "https://wowsblitz.com"
         - "https://console.worldoftanks.com"
         - "https://wowslegends.com"
         - "https://tankionline.com"
-    training:
+    TrainingButton:
         original: ["hangar/TrainingRoomButton"]
         other:
         - "1 vs 1?"
         - "TO THE GYM"
-    platoonReady:
-        original: ["hangar/ReadyButton"]
-    platoonCancel:
-        original: ["hangar/NotReadyButton"]
-    placeholder:
+    ReadyButton:
+        original: ["hangar/squad/readyButton"]
+        other:
+        - "Prepare for double penetration!"
+    NotReadyButton:
+        original: ["hangar/squad/cancelButton"]
+    BackToSquadButton:
+        original: ["hangar/squad/backToSquadButton"]
+    CrazyPlaceholder:
         original: ["hangar/placeholderButton"]
         other:
         - "GOTCHA!"
         - "\u2019\u005C_( :) )_/\u2019"   # shrug '\_( :) )_/'
-        - "9.99$ for \u201Dreturn button to home\u201D DLC"
+        - "9.99\u0024 for \u201Dreturn button to home\u201D DLC"
         - "404 Not found / nginx 1.idk.what"
     dynamic_vars:
     - ["vector<string>", "crazy_mathOperatorStringPool", "[\"+\"; \"-\"; \"*\"; \"/\"; \"%\"; \"**\"; \" AND \"; \" OR \"; \" XOR \"]"]

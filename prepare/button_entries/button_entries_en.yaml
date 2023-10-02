@@ -7,7 +7,7 @@ en:
         quack: ["Quack~"]
         other:
         - "GO TOUCH SOME GRASS"
-    battle:
+    BattleWrapper:
         original: ["BATTLE!"]
         tr_tonumber: ["2\b1\b20\b20\b12\b5"]
         tr_morse: ["-... .- - - .-.. ."]
@@ -16,7 +16,7 @@ en:
         tr_atbash: ["YZGGOV!"]
         other:
         - "BATTLE?"
-    training:
+    TrainingButton:
         original: ["TRAIN"]
         tr_tonumber: ["20\b18\b1\b9\b14"]
         tr_morse: ["- .-. .- .. -."]
@@ -25,11 +25,28 @@ en:
         tr_atbash: ["GIZRM"]
         other:
         - "DO RP"
-    platoonReady:
+    ReadyButton:
         original: ["READY!"]
-    platoonCancel:
+        tr_tonumber: ["18\b5\b1\b4\b25"]
+        tr_morse: [".-. . .- -.. -.-- -.-.--"]
+        tr_reverse: ["!YDAER"]
+        tr_rot13: ["ERNQL!"]
+        tr_atbash: ["IVZWB!"]
+    NotReadyButton:
         original: ["CANCEL"]
-    placeholder:
+        tr_tonumber: ["3\b1\b14\b3\b5\b12"]
+        tr_morse: ["-.-. .- -. -.-. . .-.."]
+        tr_reverse: ["LECNAC"]
+        tr_rot13: ["PNAPRY"]
+        tr_atbash: ["CANCEL"]
+    BackToSquadButton:
+        original: ["TO PLATOON"]
+        tr_tonumber: ["20\b16\b0\b16\b20\b15\b15\b14"]
+        tr_morse: ["- --- / .--. .-.. .- - --- --- -."]
+        tr_reverse: ["NOOTALP OT"]
+        tr_rot13: ["GB CYNGBBA"]
+        tr_atbash: ["GL KOZGLLM"]
+    CrazyPlaceholder:
         original: ["n/a"]
         other:
         - "Here be dragons..."

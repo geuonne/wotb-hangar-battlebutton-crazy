@@ -1,11 +1,15 @@
 uk:
     common:
         original: ["n/a"]
-    battle:
+    BattleWrapper:
         original: ["ДО БОЮ!"]
-    training:
+    TrainingButton:
         original: ["ТРЕНУВАТИСЯ"]
-    platoonReady:
+    ReadyButton:
         original: ["ГОТОВИЙ!"]
-    platoonCancel:
-        original: ["НЕ ГОТОВИЙ!"]
+    NotReadyButton:
+        original: ["СКАСУВАТИ"]
+    BackToSquadButton:
+        original: ["ДО ВЗВОДУ"]
+    CrazyPlaceholder:
+        original: ["n/a"]
