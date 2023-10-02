@@ -1,4 +1,5 @@
 include ../definitions.mk
+include ../yaml_definitions.mk
 
 # Constants
 c_mod_effects_file = effects.yaml
@@ -55,7 +56,7 @@ define add_control_string_pool =
 $(eval _component = ($(call yq_dava,.Prototypes[]->BattleButton)).components.UIDataLocalBindingsComponent.data)
 # Label of battle button is named buttonText, not battleButtonText
 $(eval _i_element = $(subst battle,,$(i_element)))
-$(eval _string_pool_var = [["string", "$(_i_element)buttonText", "$(i_element)buttonStringPool[rand(Size($(i_element)buttonStringPool))]"]]  .[].[] style = "flow" | ... style = "flow")
+$(eval _string_pool_var = [["string", "$(_i_element)buttonText", "$(i_element)buttonStringPool[rand(Size($(i_element)buttonStringPool))]"]] | ... style = "flow" | .[].[] style = "double")
 $(YQ) --inplace '$(_component) += ($(_string_pool_var))' $@ $(_STASEP)
 
 # Add string pool itself
