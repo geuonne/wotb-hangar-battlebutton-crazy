@@ -5,4 +5,4 @@ bindings:
 - ["input", "not crazy_bButtonIsDisplaced"]
 bindings_battleType:
 - ["visible", "isBattleTypeButtonVisible and not (isPrebattleTraining and isGeneralPackLoaded) and not crazy_bButtonIsDisplaced"]
-- ["input", "not crazy_bButtonIsDisplaced"]
+- ["input", "isBattleTypeButtonVisible and not (isPrebattleTraining and isGeneralPackLoaded) and not crazy_bButtonIsDisplaced"]
