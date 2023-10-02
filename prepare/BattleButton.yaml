@@ -1,5 +1,5 @@
 Header:
-    version: 150
+    version: 161
 ImportedPackages:
 - "~res:/UI/Screens3/Lobby/Common/BadgeHolder.yaml"
 Prototypes:
@@ -17,10 +17,16 @@ Prototypes:
             verticalPolicy: "PercentOfMaxChild"
         UIDataParamsComponent:
             params:
+            - ["int", "untakenRewardsCount", "0", "42"]
+            - ["bool", "squadReadyButtonEnabled", "true", "true"]
+            - ["string", "squadRestrictionText", "\"\"", "\"Squad restriction text!\""]
+            - ["bool", "forceDisableSquadButtons", "false", "false"]
+            - ["bool", "showSquadUI", "false", "true"]
+            - ["bool", "isInSquad", "false", "true"]
             - ["bool", "forceDisabled", "false", "false"]
             - ["eTutorialHighlights", "tutorialHighlight", "eTutorialHighlights.kUnknown", "eTutorialHighlights.kUnknown"]
             - ["eTutorialLesson", "tutorialLesson", "eTutorialLesson.kUnknown", "eTutorialLesson.kUnknown"]
-            - ["bool", "isDeveloperUI", "false", "true"]
+            - ["bool", "isDeveloperUI", "false", "false"]
             - ["bool", "isGeneralPackLoaded", "true", "true"]
             - ["bool", "isPrebattleTraining", "false", "false"]
             - ["eBoosterSlotStatus", "boosterSlotStatus", "eBoosterSlotStatus.BOOSTER_INSTALLED", "eBoosterSlotStatus.BOOSTERS_AVAILABLE_IN_STORAGE"]
@@ -28,10 +34,10 @@ Prototypes:
             - ["bool", "tankIsAccept", "true", "true"]
             - ["bool", "isSquadReady", "true", "true"]
             - ["bool", "isBadgeVisible", "false", "true"]
-            - ["bool", "isBattleTypeButtonVisible", "false", "true"]
+            - ["bool", "isBattleTypeButtonVisible", "false", "false"]
             - ["bool", "isVehicleFitsForGameMode", "true", "true"]
             - ["bool", "isRepair", "true", "false"]
-            - ["bool", "isReadyToBattle", "true", "true"]
+            - ["bool", "isReadyToBattle", "true", "false"]
             - ["bool", "isJoined", "true", "true"]
             - ["bool", "packIsAvailibleForBattle", "false", "true"]
             - ["bool", "availabilityStatus", "true", "true"]
@@ -51,6 +57,10 @@ Prototypes:
             - ["bool", "multiplierAdAvailable", "false", "true"]
             - ["bool", "tankXpMultiplierActive", "true", "true"]
             events:
+            - "ON_SQUAD_AND_HANGAR_TOGGLE_PRESSED"
+            - "ON_BACK_TO_SQUAD_SCREEN_PRESSED"
+            - "ON_NOT_READY_FOR_SQUAD_PRESSED"
+            - "ON_READY_FOR_SQUAD_PRESSED"
             - "DEV_LOGOUT"
             - "ON_DEV_BUTTON"
             - "ON_DEV_INFO_BUTTON"
@@ -95,7 +105,7 @@ Prototypes:
             LinearLayout:
                 spacing: 4.000000
             SizePolicy:
-                horizontalPolicy: "PercentOfFirstChild"
+                horizontalPolicy: "PercentOfMaxChild"
                 verticalPolicy: "PercentOfMaxChild"
         children:
         -   class: "UIControl"
@@ -109,52 +119,6 @@ Prototypes:
                     verticalPolicy: "PercentOfMaxChild"
             children:
             -   class: "UIControl"
-                name: "Shadows"
-                input: false
-                components:
-                    Anchor:
-                        topAnchorEnabled: true
-                        topAnchor: -16.000000
-                    LinearLayout:
-                        enabled: true
-                        padding: "-32"
-                    IgnoreLayout: {}
-                    SizePolicy:
-                        horizontalPolicy: "PercentOfParent"
-                        verticalPolicy: "PercentOfParent"
-                bindings:
-                - ["visible", "not (isPrebattleTraining and isGeneralPackLoaded)"]
-                children:
-                -   class: "UIControl"
-                    name: "Left"
-                    input: false
-                    components:
-                        Background:
-                            sprite: "~res:/Gfx/Lobby/controls/buttons/button_battle/button_shadow_battle_left"
-                        SizePolicy:
-                            horizontalPolicy: "PercentOfContent"
-                            verticalPolicy: "PercentOfContent"
-                -   class: "UIControl"
-                    name: "Center"
-                    input: false
-                    components:
-                        Background:
-                            drawType: "DRAW_TILED"
-                            sprite: "~res:/Gfx/Lobby/controls/buttons/button_battle/button_shadow_battle_center"
-                        SizePolicy:
-                            horizontalPolicy: "PercentOfParent"
-                            verticalPolicy: "PercentOfContent"
-                -   class: "UIControl"
-                    name: "Right"
-                    input: false
-                    components:
-                        Background:
-                            sprite: "~res:/Gfx/Lobby/controls/buttons/button_battle/button_shadow_battle_left"
-                            spriteModification: ["FLIP_HORIZONTAL"]
-                        SizePolicy:
-                            horizontalPolicy: "PercentOfContent"
-                            verticalPolicy: "PercentOfContent"
-            -   class: "UIControl"
                 name: "BattleWrapper"
                 exclusiveInput: true
                 components:
@@ -167,17 +131,17 @@ Prototypes:
                         attachId: "BATTLE_BUTTON"
                     UIInputEventComponent:
                         onTouchUpInside: "BATTLE"
+                    Sound: {}
                     UILayerComponent: {}
-                    StyleSheet:
-                        styles: "~res:/UI/Screens3/ButtonSound.style.yaml"
                 bindings:
-                - ["visible", "not (isPrebattleTraining and isGeneralPackLoaded)"]
+                - ["visible", "not (isPrebattleTraining and isGeneralPackLoaded) and not isInSquad"]
                 - ["enabled", "not forceDisabled"]
                 - ["classes", "buttonStyle"]
                 - ["UILayerComponent.layer", "when tutorialHighlight == eTutorialHighlights.kBattleButton -> 1, 0"]
                 children:
                 -   class: "UIControl"
                     name: "Content"
+                    position: [92.000000, 28.000000]
                     pivot: [0.500000, 0.500000]
                     input: false
                     classes: "content-area"
@@ -243,6 +207,7 @@ Prototypes:
                                 styles: "~res:/UI/Screens3/Color.style.yaml;~res:/UI/Screens3/Lobby/Hangar/BattleButton.style.yaml"
                     -   class: "UIControl"
                         name: "Text"
+                        position: [12.000000, 0.000000]
                         input: false
                         classes: "t-content-h4 bold white-wild-sand-text"
                         components:
@@ -291,6 +256,33 @@ Prototypes:
                             updateInvisible: false
                         StyleSheet:
                             styles: "~res:/UI/Screens3/Lobby/Hangar/BattleButton.style.yaml"
+            -   class: "UIControl"
+                name: "SquadBattleButtonWrapper"
+                input: false
+                components:
+                    LinearLayout:
+                        spacing: 4.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfFirstChild"
+                    UIChildComponent0:
+                        condition: "isInSquad"
+                        prototypePath: "~res:/UI/Screens3/Lobby/Hangar/SquadBattleButtonControls.yaml"
+                        args:
+                            "untakenRewardsCount": "untakenRewardsCount"
+                            "isSquadType": "isSquadType"
+                            "isReadyToBattle": "isReadyToBattle"
+                            "squadRestrictionText": "squadRestrictionText"
+                            "squadReadyButtonEnabled": "squadReadyButtonEnabled"
+                            "forceDisableSquadButtons": "forceDisableSquadButtons"
+                            "showSquadUI": "showSquadUI"
+                        eventActions:
+                        - ["ON_READY_FOR_SQUAD_PRESSED", "ON_READY_FOR_SQUAD_PRESSED", ""]
+                        - ["ON_NOT_READY_FOR_SQUAD_PRESSED", "ON_NOT_READY_FOR_SQUAD_PRESSED", ""]
+                        - ["ON_BACK_TO_SQUAD_SCREEN_PRESSED", "ON_BACK_TO_SQUAD_SCREEN_PRESSED", ""]
+                        - ["ON_SQUAD_AND_HANGAR_TOGGLE_PRESSED", "ON_SQUAD_AND_HANGAR_TOGGLE_PRESSED", ""]
+                    StyleSheet:
+                        styles: "~res:/UI/Screens3/Lobby/Hangar/BattleButton.style.yaml"
             -   class: "UIControl"
                 name: "BattleTypeWrapper"
                 selected: true
@@ -430,7 +422,7 @@ Prototypes:
                                 horizontalPolicy: "PercentOfMaxChild"
                                 verticalPolicy: "PercentOfMaxChild"
                         bindings:
-                        - ["visible", "isBattleTypeButtonVisible and isBadgeVisible"]
+                        - ["visible", "when isInSquad -> isBattleTypeButtonVisible and isBadgeVisible and isSquadCreator, isBattleTypeButtonVisible and isBadgeVisible"]
                         children:
                         -   prototype: "BadgeHolder/BadgeHolder"
                             name: "BadgeHolder"
@@ -492,7 +484,7 @@ Prototypes:
                     StyleSheet:
                         styles: "~res:/UI/Screens3/ButtonSound.style.yaml"
                 bindings:
-                - ["visible", "isPrebattleTraining and isGeneralPackLoaded"]
+                - ["visible", "isPrebattleTraining and isGeneralPackLoaded and not isInSquad"]
                 - ["input", "isPrebattleTraining and isGeneralPackLoaded"]
                 children:
                 -   class: "UIControl"
@@ -717,6 +709,7 @@ Prototypes:
                 autoStart: true
         -   class: "UIControl"
             name: "X2FactorContainer"
+            position: [236.000000, 2.000000]
             size: [32.000000, 32.000000]
             input: false
             components:
@@ -870,7 +863,7 @@ Prototypes:
                 onTouchUpInside: "ON_BOOSTERS"
             Sound: {}
             StyleSheet:
-                styles: "~res:/UI/Screens3/ButtonSound.style.yaml"
+                styles: "~res:/UI/Screens3/ButtonSound.style.yaml;~res:/UI/Screens3/Lobby/Hangar/BattleButton.style.yaml"
         bindings:
         - ["visible", "boostersButtonIsVisible"]
         - ["input", "boostersButtonIsVisible"]
