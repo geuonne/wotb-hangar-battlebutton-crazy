@@ -1,7 +1,7 @@
 dynamic_vars:
-- ["bool", "crazy_buttonEffect_bPivot", "((rand(10000) / 100) <= 1.5)"]
+- ["bool", "crazy_buttonEffect_bPivot", "((rand(10000) / 100) <= 1.2)"]
 - ["bool", "crazy_buttonEffect_bScale", "(crazy_buttonEffect_bPivot and (rand(10000) <= 5000))"]
-- ["bool", "crazy_buttonEffect_bAngle", "((rand(10000) / 100) <= 20)"]
+- ["bool", "crazy_buttonEffect_bAngle", "((rand(10000) / 100) <= 0.7)"]
 # Whether to show placeholder button and hide other controls in the way of it
 - ["bool", "crazy_bButtonIsDisplaced", "crazy_buttonEffect_bScale or crazy_buttonEffect_bAngle"]
 bindings:
