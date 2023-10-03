@@ -12,8 +12,8 @@ mod_entry:
     compatibility:
         target_publisher: "any"
         target_platform: "any"
-        target_patch: 1020
-        patch_tested: 1020
+        target_patch: 1030
+        patch_tested: 1030
     # Mod description
     description:
         ru: |
