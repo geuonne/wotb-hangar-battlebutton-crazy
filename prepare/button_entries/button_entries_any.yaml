@@ -57,7 +57,7 @@ any:
         other:
         - "GOTCHA!"
         - "\u2019\u005C_( :) )_/\u2019"   # shrug '\_( :) )_/'
-        - "9.99\u0024 for \u201Dreturn button to home\u201D DLC"
+        - "9.99 USD for \u201Dreturn button to home\u201D DLC"
         - "404 Not found / nginx 1.idk.what"
     dynamic_vars:
     - ["vector<string>", "crazy_mathOperatorStringPool", "[\"+\"; \"-\"; \"*\"; \"/\"; \"%\"; \"**\"; \" AND \"; \" OR \"; \" XOR \"]"]

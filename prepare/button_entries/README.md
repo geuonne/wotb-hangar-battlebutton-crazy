@@ -52,7 +52,7 @@ Insert custom variables for dynamic entries here, written exactly like in WG yam
    - `\u2019` for `'`
    - `\u005C` for `\`
    - `\u0023` for `#`
-   - `\u0024` for `$`
+   - for `$` write `USD` instead, (it's hard to escape dollar sign correctly in makefile)
 2. Separate letter codes with literal `\b` for `tr_tonumber` entry for better readability. Example:
 ```yaml
 tr_tonumber: ["1\b2\b3"]
