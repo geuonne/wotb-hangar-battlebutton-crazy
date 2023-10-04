@@ -1,6 +1,6 @@
 any:
     common:
-        original: [" "]   # empty
+        original: ["\b"]   # empty
         repair: ["hangar/RepairButton"]
         exit: ["hangar/exitButton"]
         wait: ["n/a"]
@@ -59,6 +59,7 @@ any:
         - "\u2019\u005C_( :) )_/\u2019"   # shrug '\_( :) )_/'
         - "9.99 USD for \u201Dreturn button to home\u201D DLC"
         - "404 Not found / nginx 1.idk.what"
+        - "\b"
     dynamic_vars:
     - ["vector<string>", "crazy_mathOperatorStringPool", "[\"+\"; \"-\"; \"*\"; \"/\"; \"%\"; \"**\"; \" AND \"; \" OR \"; \" XOR \"]"]
     - ["string", "crazy_mathOperator", "crazy_mathOperatorStringPool[rand(Size(crazy_mathOperatorStringPool))]"]

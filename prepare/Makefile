@@ -61,7 +61,7 @@ $(eval all_entries = [.$(mod_target_language).$(i_control).*, .*.$(i_control).or
 # Placeholder button has its own set of entries
 $(eval all_entries = $(if $(subst placeholder,,$(i_control)),$(all_entries),[.$(mod_target_language).$(i_control).*$(,) .any.$(i_control).*]))
 
-$(eval string_pool != $(YQ) eval-all '$(all_entries) | flatten | ... comments = "" | unique | . style = "flow"' $^ | $(SED) 's/", "/"; "/g; s/\("@@\|@@"\)//g; s/\\\"/"/g; s/"/\\\"/g; s/\(.*\)/"\1"/')
+$(eval string_pool != $(YQ) eval-all '$(all_entries) | flatten | ... comments = "" | unique | . style = "flow" | join("\"; \"") | sub("(\"@@|@@\")", "") | "[\"" + . + "\"]"' $^)
 $(eval _string_pool_formatted = [["vector<string>", "crazy_$(i_control)buttonStringPool", $(string_pool)]] | ... style = "flow" | .[].[] style = "double")
 $(YQ) --inplace '$(_component) += ($(_string_pool_formatted))' $@ $(_STASEP)
 endef
