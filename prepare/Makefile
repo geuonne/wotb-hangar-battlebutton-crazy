@@ -59,9 +59,9 @@ $(YQ) --inplace '$(_component) += ($(_string_pool_var))' $@ $(_STASEP)
 $(eval _component = ($(base_control).components.UIDataLocalVarsComponent.data))
 $(eval all_entries = [.$(mod_target_language).$(i_control).*, .*.$(i_control).original, [.$(mod_target_language).* | select(has("original")).original[]], .any.$(i_control).*, .any.common.*, .$(mod_target_language).common.*])
 # Placeholder button has its own set of entries
-$(eval all_entries = $(if $(subst placeholder,,$(i_control)),$(all_entries),[.$(mod_target_language).$(i_control).*$(,) .any.$(i_control).*]))
+$(eval all_entries = $(if $(filter $(i_control),CrazyPlaceholder),[.$(mod_target_language).$(i_control).*$(,) .any.$(i_control).*],$(all_entries)))
 
-$(eval string_pool != $(YQ) eval-all '$(all_entries) | flatten | ... comments = "" | unique | . style = "flow" | join("\"; \"") | sub("(\"@@|@@\")", "") | "[\"" + . + "\"]"' $^)
+$(eval string_pool != $(YQ) eval-all '$(all_entries) | flatten | ... comments = "" | unique | . style = "flow" | join("\"; \"") | sub("(\"@@|@@\")", "") | "[\"" + . + "\"]" | sub("(\"@@|@@\")", "")' $^)
 $(eval _string_pool_formatted = [["vector<string>", "crazy_$(i_control)buttonStringPool", $(string_pool)]] | ... style = "flow" | .[].[] style = "double")
 $(YQ) --inplace '$(_component) += ($(_string_pool_formatted))' $@ $(_STASEP)
 endef
@@ -76,6 +76,7 @@ define add_control_crazyeffects =
 # Add effect bindings
 $(eval _component = ($(call yq_dava,$(base_control).children[]$(if $(filter $(i_control),$(button_controls_squad)),,->ButtonWrapper->BattleButtonWrapper)->$(i_control))).bindings)
 $(eval _command = $(YQ) --inplace '$(_component) += (load("$(c_mod_crazyeffects_file)").bindings)' $@ $(_STASEP))
+# Placeholder button must be still
 $(if $(filter $(i_control),CrazyPlaceholder),$(eval _command = ))
 $(_command)
 endef
